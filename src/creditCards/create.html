@@ -1,0 +1,33 @@
+<template>
+  <section>
+    <h2>Add Credit Card</h2>
+
+    <form role="form" submit.delegate="createCreditCard()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" value.bind="creditCard.name" class="form-control" id="name" placeholder="Name">
+      </div>
+      <div class="form-group">
+        <label for="interest">Interest Rate</label>
+        <input type="text" value.bind="creditCard.interest_rate" class="form-control" id="interest" placeholder="Interest Rate">
+      </div>
+      <div class="form-group">
+        <label for="balance">Balance</label>
+        <input type="text" value.bind="creditCard.balance" class="form-control" id="balance" placeholder="Balance">
+      </div>
+      <div class="form-group">
+        <label for="payment">Minimum Payment</label>
+        <input type="text" value.bind="creditCard.min_payment" class="form-control" id="payment" placeholder="Minimum Payment">
+      </div>
+      <div class="form-group">
+        <label for="percent">Minimum Payment Percent</label>
+        <input type="text" value.bind="creditCard.min_payment_percent" class="form-control" id="percent" placeholder="Minimum Payment Percent">
+      </div>
+      <div class="form-group">
+        <label for="fee">Annual Fee</label>
+        <input type="text" value.bind="creditCard.annual_fee" class="form-control" id="fee" placeholder="Annual Fee">
+      </div>
+      <button type="submit" class="btn btn-default">Add Credit Card</button>
+    </form>
+  </section>
+</template>
