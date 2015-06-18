@@ -8,7 +8,7 @@ export class API {
   constructor(http, User){
     this.http = http;
     this.http.configure(x => {
-      x.withBaseUri('http://localhost:8000/api/v1.0/');
+      x.withBaseUrl('http://localhost:8000/api/v1.0/');
       let token = localStorage.getItem('token');
       if(token){
         x.withHeader('Authorization', 'Token ' + token);
