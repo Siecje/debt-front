@@ -22,6 +22,9 @@ export class Login{
 
   login(){
     this.api.getAuthToken(this.username, this.password).then(() => {
+      //this.router.removeRoute('login');
+      this.router.addRoute({ route: 'login', moduleId: './login', nav: false, title: 'Login'});
+      this.router.refreshNavigation();
       this.router.navigate('');
     });
   }

@@ -44,7 +44,7 @@ export class API {
 
   saveCreditCard(creditCard){
     if(creditCard.id){
-      return this.http.put(`credit-cards/${project.id}`, creditCard);
+      return this.http.put(`credit-cards/${creditCard.id}`, creditCard);
     }
     return this.http.post('credit-cards', creditCard);
   }
