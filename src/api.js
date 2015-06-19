@@ -48,4 +48,35 @@ export class API {
     }
     return this.http.post('credit-cards', creditCard);
   }
+
+  getAllExpenses(){
+    return this.http.get('expenses');
+  }
+
+  getExpense(id){
+    return this.http.get(`expenses/${id}`);
+  }
+
+  saveExpense(expense){
+    if(expense.id){
+      return this.http.put(`expenses/${expense.id}`, expense);
+    }
+    return this.http.post('expenses', expense);
+  }
+
+  getAllTypes(){
+    return this.http.get('types');
+  }
+
+  getType(id){
+    return this.http.get(`types/${id}`);
+  }
+
+  saveType(type){
+    if(type.id){
+      return this.http.put(`types/${type.id}`, type);
+    }
+    return this.http.post('types', type);
+  }
+
 }

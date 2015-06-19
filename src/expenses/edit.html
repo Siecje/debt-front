@@ -1,0 +1,15 @@
+<template>
+  <section>
+    <h2><input type="text" value="${expense.name}"></h2>
+
+    <table>
+      <tr><td>Name</td><td><input type="text" value="${expense.name}"></td></tr>
+      <tr><td>Amount</td><td><input type="text" value="${expense.amount}"></td></tr>
+      <tr><td>Frequency</td><td><input type="text" value="${expense.frequency}"></td></tr>
+      <tr><td>Type</td><td><input type="text" value="${expense.type}"></td></tr>
+    </table>
+
+    <button type="button" click.trigger="saveExpense()">Save Expense</button>
+
+  </section>
+</template>

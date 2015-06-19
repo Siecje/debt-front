@@ -1,0 +1,16 @@
+<template>
+  <section>
+    <h2>Add Type</h2>
+    <p class="error">${errorMessage}</p>
+
+    <form role="form" submit.delegate="createType()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" value.bind="type.name" class="form-control" id="name" placeholder="Name" aria-describedby="name-error">
+        <span id="name-error" class="error">${errors.name}</span>
+      </div>
+
+      <button type="submit" class="btn btn-default">Add Type</button>
+    </form>
+  </section>
+</template>

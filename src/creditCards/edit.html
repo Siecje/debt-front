@@ -1,6 +1,7 @@
 <template>
   <section>
     <h2><input type="text" value="${creditCard.name}"></h2>
+    <p class="error">${errorMessage}</p>
 
     <table>
       <tr><td>Balance</td><td><input type="text" value="${creditCard.balance}"></td></tr>
@@ -9,5 +10,8 @@
       <tr><td>Minimum Payment Percent</td><td><input type="text" value="${creditCard.minimum_payment_percent}"></td></tr>
       <tr><td>Annual Fee</td><td><input type="text" value="${creditCard.annual_fee}"></td></tr>
     </table>
+
+    <button type="button" click.trigger="saveCreditCard()">Save Credit Card</button>
+
   </section>
 </template>

@@ -1,0 +1,35 @@
+<template>
+  <section>
+    <h2>Add Expense</h2>
+    <p class="error">${errorMessage}</p>
+
+    <form role="form" submit.delegate="createExpense()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" value.bind="expense.name" class="form-control" id="name" placeholder="Name" aria-describedby="name-error">
+        <span id="name-error" class="error">${errors.name}</span>
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="text" value.bind="expense.amount" class="form-control" id="amount" placeholder="Amount" aria-describedby="amount-error">
+        <span id="amount-error" class="error">${errors.amount}</span>
+      </div>
+      <div class="form-group">
+        <label for="frequency">Frequency</label>
+        <input type="text" value.bind="expense.frequency" class="form-control" id="frequency" placeholder="Frequency" aria-describedby="frequency-error">
+        <span id="frequency-error" class="error">${errors.frequency}</span>
+      </div>
+      <div class="form-group">
+        <label for="type">Type</label>
+        <select value.bind="expense.type">
+          <option repeat.for="type of types" value.bind="type.id">${type.name}</option>
+        </select>
+        <span id="type-error" class="error">${errors.type}</span>
+      </div>
+
+      <a href="#/types/new">Add Type</a>
+      <br>
+      <button type="submit" class="btn btn-default">Add Expense</button>
+    </form>
+  </section>
+</template>
