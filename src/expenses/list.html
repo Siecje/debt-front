@@ -1,0 +1,13 @@
+<template>
+  <section>
+    <div repeat.for="expense of expenses">
+      <h2><a href="#/expenses/${expense.id}">${expense.name}</a></h2>
+
+      <table>
+        <tr><td>Amount</td><td>${expense.amount}</td></tr>
+        <tr><td>Frequency</td><td>${expense.frequency}</td></tr>
+        <tr><td>Type</td><td>${expense.type.name}</td></tr>
+      </table>
+    </div>
+  </section>
+</template>

@@ -8,9 +8,10 @@ export class App {
       { route: '',     moduleId: './welcome', nav: false, title:'Welcome'},
       { route: 'login', moduleId: './login', nav: true, title: 'Login'},
 
-      { route: 'expense/new',  moduleId: './expenses/create', nav: true, title:'Add Expense'},
-      { route: 'expense/:id',  moduleId: './expenses/detail'},
-      { route: 'expense/:id/edit',  moduleId: './expenses/edit'},
+      { route: 'expenses',      moduleId: './expenses/list', nav: true, title: 'Expenses'},
+      { route: 'expenses/new',  moduleId: './expenses/create', nav: true, title:'Add Expense'},
+      { route: 'expenses/:id',  moduleId: './expenses/detail'},
+      { route: 'expenses/:id/edit',  moduleId: './expenses/edit'},
 
       { route: 'new',  moduleId: './creditCards/create', nav: true, title:'Add Credit Card'},
       { route: ':id',  moduleId: './creditCards/detail'},

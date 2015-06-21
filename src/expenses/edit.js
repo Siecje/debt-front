@@ -10,8 +10,9 @@ export class EditExpense{
   }
 
   activate(params){
-    return this.API.getExpense(params.id).then(response => {
+    this.API.getExpense(params.id).then(response => {
       this.expense = response.content;
+    }).then(() => {
       this.API.getAllTypes().then(response => {
         this.types = response.content;
       });
