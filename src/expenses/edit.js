@@ -5,8 +5,9 @@ export class EditExpense{
   constructor(API){
     this.API = API;
     this.expense = {};
-    this.errorMessage = '';
     this.types = [];
+    this.errorMessage = '';
+    this.errors = {};
   }
 
   activate(params){
@@ -23,7 +24,7 @@ export class EditExpense{
     this.API.saveExpense(this.expense).catch(err => {
       console.log(err);
       if (err.statusCode === 400){
-        this.errorMessage = JSON.parse(err.response).type;
+        this.errors = JSON.parse(err.response);
       }
       else if(err.statusCode === 401){
         this.errorMessage = JSON.parse(err.response).detail;

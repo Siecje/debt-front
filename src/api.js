@@ -79,4 +79,19 @@ export class API {
     return this.http.post('types', type);
   }
 
+  getAllIncomes(){
+    return this.http.get('incomes');
+  }
+
+  getIncome(id){
+    return this.http.get(`incomes/${id}`);
+  }
+
+  saveIncome(income){
+    if(income.id){
+      return this.http.put(`incomes/${income.id}`, income);
+    }
+    return this.http.post(`incomes`, income);
+  }
+
 }

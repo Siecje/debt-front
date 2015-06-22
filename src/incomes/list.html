@@ -1,0 +1,13 @@
+<template>
+  <section>
+    <div repeat.for="income of incomes">
+      <h2><a href="#/incomes/${income.id}">${income.name}</a></h2>
+
+      <table>
+        <tr><td>Amount</td><td>${income.amount}</td></tr>
+        <tr><td>Frequency</td><td>${income.frequency}</td></tr>
+        <tr><td>Type</td><td>${income.date}</td></tr>
+      </table>
+    </div>
+  </section>
+</template>

@@ -1,22 +1,21 @@
 import {API} from '../api';
+import {Router} from 'aurelia-router';
 
-export class EditCreditCard{
-  static inject() { return [API]; }
-  constructor(API){
+export class CreateExpense{
+  static inject() { return [API, Router]; }
+
+  constructor(API, router){
     this.API = API;
-    this.creditCard = {};
+    this.router = router;
+    this.income = {};
     this.errorMessage = '';
     this.errors = {};
   }
 
-  activate(params){
-    return this.API.getCreditCard(params.id).then(response => {
-      this.creditCard = response.content;
-    });
-  }
-
-  saveCreditCard(){
-    this.API.saveCreditCard(this.creditCard).catch(err => {
+  createIncome(){
+    this.API.saveIncome(this.income).then(response => {
+      this.router.navigate('/');
+    }).catch(err => {
       console.log(err);
       if (err.statusCode === 400){
         this.errors = JSON.parse(err.response);

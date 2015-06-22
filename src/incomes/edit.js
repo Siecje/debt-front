@@ -1,22 +1,22 @@
 import {API} from '../api';
 
-export class EditCreditCard{
+export class EditExpense{
   static inject() { return [API]; }
   constructor(API){
     this.API = API;
-    this.creditCard = {};
+    this.income = {};
     this.errorMessage = '';
     this.errors = {};
   }
 
   activate(params){
-    return this.API.getCreditCard(params.id).then(response => {
-      this.creditCard = response.content;
+    this.API.getIncome(params.id).then(response => {
+      this.income = response.content;
     });
   }
 
-  saveCreditCard(){
-    this.API.saveCreditCard(this.creditCard).catch(err => {
+  saveIncome(){
+    this.API.saveIncome(this.income).catch(err => {
       console.log(err);
       if (err.statusCode === 400){
         this.errors = JSON.parse(err.response);

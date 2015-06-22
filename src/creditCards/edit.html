@@ -3,15 +3,38 @@
     <h2><input type="text" value="${creditCard.name}"></h2>
     <p class="error">${errorMessage}</p>
 
-    <table>
-      <tr><td>Balance</td><td><input type="text" value="${creditCard.balance}"></td></tr>
-      <tr><td>Interest Rate</td><td><input type="text" value="${creditCard.interest_rate}"></td></tr>
-      <tr><td>Minimum Payment</td><td><input type="text" value="${creditCard.minimum_payment}"></td></tr>
-      <tr><td>Minimum Payment Percent</td><td><input type="text" value="${creditCard.minimum_payment_percent}"></td></tr>
-      <tr><td>Annual Fee</td><td><input type="text" value="${creditCard.annual_fee}"></td></tr>
-    </table>
-
-    <button type="button" click.trigger="saveCreditCard()">Save Credit Card</button>
-
+    <form role="form" submit.delegate="saveCreditCard()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" value.bind="creditCard.name" class="form-control" id="name" placeholder="Name" aria-describedby="name-error">
+        <span id="name-error" class="error">${errors.name}</span>
+      </div>
+      <div class="form-group">
+        <label for="interest">Interest Rate</label>
+        <input type="text" value.bind="creditCard.interest_rate" class="form-control" id="interest" placeholder="Interest Rate" aria-describedby="interest-error">
+        <span id="interest-error" class="error">${errors.interest_rate}</span>
+      </div>
+      <div class="form-group">
+        <label for="balance">Balance</label>
+        <input type="text" value.bind="creditCard.balance" class="form-control" id="balance" placeholder="Balance" aria-describedby="balance-error">
+        <span id="balance-error" class="error">${errors.balance}</span>
+      </div>
+      <div class="form-group">
+        <label for="payment">Minimum Payment</label>
+        <input type="text" value.bind="creditCard.min_payment" class="form-control" id="payment" placeholder="Minimum Payment" aria-describedby="payment-error">
+        <span id="payment-error" class="error">${errors.min_payment}</span>
+      </div>
+      <div class="form-group">
+        <label for="percent">Minimum Payment Percent</label>
+        <input type="text" value.bind="creditCard.min_payment_percent" class="form-control" id="percent" placeholder="Minimum Payment Percent" aria-describedby="percent-error">
+        <span id="percent-error" class="error">${errors.min_payment_percent}</span>
+      </div>
+      <div class="form-group">
+        <label for="fee">Annual Fee</label>
+        <input type="text" value.bind="creditCard.annual_fee" class="form-control" id="fee" placeholder="Annual Fee" aria-describedby="fee-error">
+        <span id="fee-error" class="error">${errors.annual_fee}</span>
+      </div>
+      <button type="submit" class="btn btn-default">Save Credit Card</button>
+    </form>
   </section>
 </template>

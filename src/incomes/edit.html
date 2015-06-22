@@ -1,0 +1,29 @@
+<template>
+  <section>
+    <h2><input type="text" value="${income.name}"></h2>
+
+    <form role="form" submit.delegate="saveIncome()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" value.bind="income.name" class="form-control" id="name" placeholder="Name" aria-describedby="name-error">
+        <span id="name-error" class="error">${errors.name}</span>
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="text" value.bind="income.amount" class="form-control" id="amount" placeholder="Amount" aria-describedby="amount-error">
+        <span id="amount-error" class="error">${errors.amount}</span>
+      </div>
+      <div class="form-group">
+        <label for="frequency">Frequency</label>
+        <input type="text" value.bind="income.frequency" class="form-control" id="frequency" placeholder="Frequency" aria-describedby="frequency-error">
+        <span id="frequency-error" class="error">${errors.frequency}</span>
+      </div>
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="text" value.bind="income.date" class="form-control" id="date" placeholder="Date" aria-describedby="date-error">
+        <span id="date-error" class="error">${errors.date}</span>
+      </div>
+      <input type="submit" value="Save Income">
+    </form>
+  </section>
+</template>
